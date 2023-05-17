@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan-1: hsl(186, 14%, 43%);
+  --dark-grayish-cyan-2: hsl(184, 14%, 56%);
+  --light-grayish-cyan-1: hsl(185, 41%, 84%);
+  --light-grayish-cyan-2: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --error: hsl(33, 100%, 47%);
+  --font-family: 'Space Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+.App {
+  height: 100vh;
+  background-color: var(--light-grayish-cyan-1);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 5%;
+}
+
+.container {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  padding: 5%;
+  border-radius: 15px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5vh;
+}
+
+label {
+  color: var(--dark-grayish-cyan-2);
+  font-weight: 700;
+  display: block;
+}
+
+.custom-form-input{
+  position: relative;
+}
+
+.form-input img {
+  position: absolute;
+  margin-left: 2vw;
+  margin-top: max(calc((7vh - 17px) / 2), 6.5px);
+}
+
+.form-input input {
+  height: max(7vh, 30px);
+  width: 100%;
+  padding-right: 2vw;
+  background-color: var(--light-grayish-cyan-2);
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: right;
+}
+
+.btn-wrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 5vw;
+  column-gap: 5vw;
+}
+
+.tip-btn {
+  height: max(7vh, 30px);
+  width: 42.5vw;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.tip-btn:hover {
+  cursor: pointer;
+  background-color: var(--strong-cyan) !important;
+  color: var(--light-grayish-cyan-1) !important;
+}
+
+.custom-btn {
+  height: max(7vh, 30px);
+  width: 42.5vw;
+  padding-right: 2vw;
+  background-color: var(--light-grayish-cyan-2);
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: right;
+  color: var(--dark-cyan);
+}
+
+.custom-btn::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.custom-btn::-moz-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.custom-btn:-moz-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.custom-btn:-ms-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.custom-btn:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.custom-btn:focus::-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.custom-btn:focus:-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.custom-btn:focus:-ms-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid var(--strong-cyan);
+  border-radius: 5px;
+}
+
+.output-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5vh;
+  background-color: var(--dark-cyan);
+  padding: 5%;
+  border-radius: 15px;
+}
+
+.output {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+}
+
+.output-title {
+  color: var(--light-grayish-cyan-2);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.output-title::after {
+  content: "/person";
+  display: block;
+  color: var(--light-grayish-cyan-1);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.output-value {
+  color: var(--strong-cyan);
+  font-size: 24px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.reset-btn {
+  height: max(7vh, 30px);
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.error{
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: var(--error);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .App {
+    padding: 5% 20%;
+  }
+
+  header {
+    padding-block-end: 5%;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    padding: 2.5%;
+  }
+
+  .form {
+    width: 50%;
+    gap: 5vh;
+    padding: 2.5% 0 2.5% 2.5%;
+  }
+
+  .btn-wrapper {
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    row-gap: 10%;
+    column-gap: 2%;
+  }
+
+  .tip-btn,
+  .custom-btn {
+    width: 100%
+  }
+
+  .output-container {
+    width: 50%;
+    padding: 5%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .output-value {
+    font-size: 36px;
+  }
+
+}
